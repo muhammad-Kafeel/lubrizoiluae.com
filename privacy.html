@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lubrizoil</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+  <!-- Insert to your webpage before the </head> -->
+  <script src="sliderengine/jquery.js"></script>
+  <script src="sliderengine/amazingslider.js"></script>
+  <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+  <script src="sliderengine/initslider-1.js"></script>
+
+  <!-- Insert to your webpage before the </head> -->
+  <!--<script src="sliderengine/jquery.js"></script>-->
+  <!--<script src="sliderengine/amazingslider.js"></script>-->
+  <!--<link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">-->
+  <!--<script src="sliderengine/initslider-1.js"></script>-->
+  <!-- End of head section HTML codes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-decoration: none;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .Logo {
+      display: block;
+      width: 40px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+
+    .logo img {
+
+      width: 200px;
+      height: 90px;
+      line-height: 80px;
+      padding: 0 20px;
+
+
+    }
+
+    nav {
+      background-color: white;
+      position: sticky;
+      top: 0;
+      height: 85px;
+      width: -100%;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      z-index: 1000;
+
+    }
+
+
+    nav ul {
+      float: right;
+      margin-right: 20px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      color: black;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    a:active,
+    a:hover {
+
+      color: rgb(170, 149, 42);
+      transition: .5s;
+
+    }
+
+    #become {
+      background-color: orange;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .checkbtn {
+      font-size: 30px;
+      color: black;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+
+    }
+
+    .checkbtn i.fa-times {
+      display: none;
+      /* Initially hide the closed icon */
+    }
+
+    #check:checked+.checkbtn i.fa-bars {
+      display: none;
+      /* Hide bars icon when checked */
+    }
+
+    #check:checked+.checkbtn i.fa-times {
+      display: block;
+      /* Show times icon when checked */
+      padding-top: 20px;
+    }
+
+    #check {
+      display: none;
+    }
+
+    @media (max-width: 952px) {
+      label.logo img {
+        width: 200px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+      nav ul li a {
+        font-size: 10px;
+
+      }
+    }
+
+    @media (max-width: 367px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+
+      }
+
+    }
+
+    @media (max-width: 348px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+    }
+
+    @media (max-width: 1274px) {
+      .checkbtn {
+        display: block;
+      }
+
+      ul {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: #2b2727;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        z-index: 1000;
+        transition: all 0.5s;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 15px 0px;
+        line-height: 15px;
+      }
+
+      nav ul li a {
+        font-size: 18px;
+        color: orange;
+      }
+
+      a:hover,
+      a.active {
+        background: none;
+        color: #e6d300;
+      }
+
+      #check:checked~ul {
+        left: 0;
+      }
+
+      main {
+        position: absolute;
+      }
+
+      #become {
+        background-color: #2b2727;
+      }
+    }
+
+   
+    .pic img {
+      width: 100%;
+      background-size: 100% 100%;
+    }
+
+    .h1 {
+      font-size: 25px;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-color: orange;
+      color: #00155E;
+    }
+
+   
+
+    .paragraph {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 20px;
+      line-height: 40px;
+      word-spacing: 20px;
+      padding: 100px;
+
+    }
+
+    @media (max-width: 834px) {
+      .h1 {
+        font-size: 16px;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: orange;
+        color: #00155E;
+      }
+     
+      .paragraph p {
+        font-size: 18px;
+        line-height: 20px;
+        word-spacing: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .paragraph {
+        padding: 10px 50px;
+      }
+    }
+
+    @media (max-width: 411px) {
+      .h1 {
+        font-size: 15px;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: orange;
+        color: #00155E;
+      }
+
+      .paragraph p {
+        font-size: 16px;
+        line-height: 20px;
+        word-spacing: 10px;
+      }
+    }
+
+
+    /* footer */
+    .footer {
+      display: flex;
+      background-image: url(images/footer/footer-new.png);
+      background-size: 100% 100%;
+      height: auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .itemone,
+    .itemtwo,
+    .itemthree {
+      margin-right: 30px;
+    }
+
+    .itemone li a {
+      font-size: 18px;
+    }
+
+    .itemtwo li a {
+      font-size: 18px;
+    }
+
+    .itemthree li a {
+      font-size: 18px;
+    }
+ .footer a {
+        /* font-size: 20px; */
+        color: white;
+      
+      }
+    .itemone .image {
+      background-color: white;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+
+
+    }
+
+    .itemone .image:hover {
+      background-color: orange;
+
+    }
+
+    .get {
+      font-size: 25px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+    }
+
+    .itemtwo,
+    .itemthree,
+    .itemfour h3 {
+      font-size: 18px;
+      font-weight: bolder;
+      color: orange;
+      margin-top: 10px;
+    }
+
+    .itemtwo li,
+    .itemthree li {
+      padding: 10px;
+    }
+
+    .itemfour p {
+      color: white;
+    }
+
+    .itemfour span {
+      color: white;
+      font-size: 30px;
+
+    }
+
+    .itemfour {
+      margin-bottom: 5px;
+      line-height: 30px;
+    }
+
+    /* Media Query for Larger Screens (min-width: 768px) */
+    @media screen and (min-width: 768px) {
+      .footer {
+        /* Adjust styles for larger screens here */
+        height: auto;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour h3 {
+        /* Adjust styles for h3 on larger screens here */
+        font-size: 28px;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo li,
+      .itemthree li {
+        /* Adjust styles for list items on larger screens here */
+        padding: 15px;
+        /* for example, adjust as needed */
+      }
+
+      .itemfour img {
+        /* Adjust styles for images on larger screens here */
+        /* padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 5%;
+      padding-right: 5%; */
+      }
+    }
+
+    @media only screen and (max-width: 1030px) {
+      .footer {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+      }
+
+      .footer a {
+        font-size: 20px;
+        color: white;
+      }
+
+      .footer h3 {
+        font-size: 23px;
+      }
+
+      .itemone,
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        width: 100%;
+        text-align: center;
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        margin-top: 10px;
+      }
+    }
+
+    .wht-btn {
+      position: fixed;
+      bottom: 0%;
+      z-index: 1000;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+      <!-- updating  -->
+      <i class="fa fa-times"></i><!-- Closed icon -->
+
+    </label>
+    <label class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></label>
+   <ul>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="Catalogue.html">PRODUCT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="oil.html">OIL FINDER</a></li>
+            <li><a href="certificate.html">CERTIFICATES</a></li>
+            <li><a href="Events.html">NEWS & EVENTS</a></li>
+            <li><a href="distributor.html" id="become">BECOME A DESTRIBUTOR</a></li>
+          
+            
+        </ul>
+  </nav>
+  <div> <a
+      href="https://wa.me/+923020777892?text=Hi%2C%20I%27m%20enquiring%20from%20the%20GlobleLubricant.com%20website"
+      class="wht-btn" target="_blank">
+      <img src="images/whatsapp-logo.png" width="64px" height="64px">
+    </a></div>
+  <div class="pic">
+    <img src="images/privacy-policy-2.webp" alt="">
+  </div>
+  <div class="h1">
+    <h1>Privacy Policy</h1>
+  </div>
+  <div class="paragraph">
+    <p>
+
+    <h3> Privacy Policy for lubrizoil</h3>
+    At <b> lubrizoil</b>, accessible from  <span style="color: red;"> https://lubrizoiluae.com </span>, one of our main
+    priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is
+    collected and recorded by lubrizoil and how we use it.
+    If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact
+    us.
+    This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to
+    the information that they shared and/or collect in <b> lubrizoil</b>. This policy is not applicable to any
+    information collected offline or via channels other than this website. Our Privacy Policy was created with the help
+    of the Privacy Policy Generator. <br><br>
+
+    <h3> Consent </h3>
+    By using our website, you hereby consent to our Privacy Policy and agree to its terms. <br><br>
+
+    <h3>Information we collect</h3>
+    The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be
+    made clear to you at the point we ask you to provide your personal information.
+    If you contact us directly, we may receive additional information about you such as your name, email address, phone
+    number, the contents of the message and/or attachments you may send us, and any other information you may choose to
+    provide.
+    When you register for an Account, we may ask for your contact information, including items such as name, company
+    name, address, email address, and telephone number.
+
+    <h3>How we use your information</h3>
+    We use the information we collect in various ways, including to:
+    Provide, operate, and maintain our website; <br>
+    Improve, personalise, and expand our website;<br>
+    Understand and analyse how you use our website;<br>
+    Develop new products, services, features, and functionality;<br>
+    Communicate with you, either directly or through one of our partners, including for customer service, to provide you
+    with updates and other information relating to the website, and for marketing and promotional purposes;<br>
+    Send you emails;<br>
+    Find and prevent fraud;<br> and
+    Log Files. <br><br>
+    <b> lubrizoil</b> follows a standard procedure of using log files. These files log visitors when they visit
+    websites. All hosting companies do this and a part of hosting services’ analytics. The information collected by log
+    files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp,
+    referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally
+    identifiable. The purpose of the information is for analysing trends, administering the site, tracking users’
+    movement on the website, and gathering demographic information. <br><br>
+
+    <h3>Cookies and Web Beacons </h3>
+    Like any other website, <b> lubrizoil</b> uses ‘cookies’. These cookies are used to store information including
+    visitors’ preferences, and the pages on the website that the visitor accessed or visited. The information is used to
+    optimise the users’ experience by customising our web page content based on visitors’ browser type and/or other
+    information.
+
+    For more general information on cookies, please read “What Are Cookies“.
+
+    Advertising Partners Privacy Policies
+    You may consult this list to find the Privacy Policy for each of the advertising partners of <b> lubrizoil</b>.
+
+    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in
+    their respective advertisements and links that appear on <b> lubrizoil</b>, which are sent directly to users’
+    browser. They automatically receive your IP address when this occurs. These technologies are used to measure the
+    effectiveness of their advertising campaigns and/or to personalise the advertising content that you see on websites
+    that you visit. <br><br>
+
+    <span style="color: red;">Note that <b> lubrizoil</b> has no access to or control over these cookies that are used by third-party advertisers.</span> <br>
+
+    <h3>Third Party Privacy Policies</h3>
+    <b> lubrizoil</b>‘s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to
+    consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may
+    include their practices and instructions about how to opt-out of certain options. <br>
+
+    You can choose to disable cookies through your individual browser options. To know more detailed information about
+    cookie management with specific web browsers, it can be found at the browsers’ respective websites. <br>
+
+    <b>CCPA Privacy Rights (Do Not Sell My Personal Information)</b>
+    Under the CCPA, among other rights, California consumers have the right to:
+
+    Request that a business that collects a consumer’s personal data disclose the categories and specific pieces of
+    personal data that a business has collected about consumers.
+    Request that a business delete any personal data about the consumer that a business has collected.
+    Request that a business that sells a consumer’s personal data, not sell the consumer’s personal data.
+    If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
+    please contact us. <br>
+
+   <b> GDPR Data Protection Rights</b>
+    We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the
+    following:
+
+    The right to access – You have the right to request copies of your personal data. We may charge you a small fee for
+    this service.
+    The right to rectification – You have the right to request that we correct any information you believe is
+    inaccurate. You also have the right to request that we complete the information you believe is incomplete.
+    The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
+    The right to restrict processing – You have the right to request that we restrict the processing of your personal
+    data, under certain conditions.
+    The right to object to processing – You have the right to object to our processing of your personal data, under
+    certain conditions.
+    The right to data portability – You have the right to request that we transfer the data that we have collected to
+    another organization, or directly to you, under certain conditions. <br>
+
+    If you make a request, we have one month to respond to you. If you would like to exercise any of these rights,
+    please contact us. <br>
+    <h3>Children’s Information </h3>
+    Another part of our priority is adding protection for children while using the internet. We encourage parents and
+    guardians to observe, participate in, and/or monitor and guide their online activity.
+    <b> lubrizoil</b> does not knowingly collect any Personal Identifiable Information from children under the age of
+    13. If you think that your child provided this kind of information on our website, we strongly encourage you to
+    contact us immediately and we will do our best efforts to promptly remove such information from our records.
+
+    </p>
+   </div>
+  <section class="footer">
+
+     <div class="itemone">
+          <a href="index.html"><img src="images/footer/LOGO.png"  width="80px" height="80px"></a> <br><br><br>
+          <a href="#" class="get">Get a Qoute</a> <br><br><br>
+          <a href="#"><img class="image" src="images/social/twitter-icon.png" width="25px" height="25px" ></a>
+          <a href="#"><img class="image" src="images/social/instagram-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/linkedin-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/youtube-icon.png" width="25px" height="auto" ></a>
+          
+        </div>
+            <div class="itemtwo">
+              <h3>Explore</h3>
+              <li><a href="oil.html">Oil Finder</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="quality.html">Quality Control</a></li>
+              <li><a href="Blog.html">Blog</a></li>
+              <li><a href="Careers.html">Careers</a></li>
+            </div>
+            <div class="itemthree">
+              <h3>Technical</h3>
+              <li><a href="certificate.html">certitficate</a></li>
+              <li><a href="Datasheet.html">Datasheet</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+              <li><a href="terms.html">Terms & Condition</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </div>
+            <div class="itemfour">
+              <h3>Get in touch</h3>
+              <img src="images/social/location_icon.png" width="20px" height="20px">
+             <span style="font-size: 12px;">Deira Dubai beside khan sahab parking auto mart shop no 24</span> <br>
+                <img src="images/social/tel.png" alt="" width="20px" height="20px">
+                <span style="font-size: 15px;">+971568424874</span> <br>
+                <img src="images/social/email_icon.png" alt="" width="20px" height="20px">
+                <span style="font-size: 15px;">info@lubrizoiluae.com</span>
+            </div>
+  </section>
+
+
+
+</body>
+
+</html>

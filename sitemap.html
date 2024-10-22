@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lubrizoil</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+  <!-- Insert to your webpage before the </head> -->
+  <script src="sliderengine/jquery.js"></script>
+  <script src="sliderengine/amazingslider.js"></script>
+  <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+  <script src="sliderengine/initslider-1.js"></script>
+
+  <!-- Insert to your webpage before the </head> -->
+  <!--<script src="sliderengine/jquery.js"></script>-->
+  <!--<script src="sliderengine/amazingslider.js"></script>-->
+  <!--<link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">-->
+  <!--<script src="sliderengine/initslider-1.js"></script>-->
+  <!-- End of head section HTML codes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .Logo {
+      display: block;
+      width: 40px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+
+    .logo img {
+
+      width: 200px;
+      height: 90px;
+      line-height: 80px;
+      padding: 0 20px;
+
+
+    }
+
+    nav {
+      background-color: white;
+      position: sticky;
+      top: 0;
+      height: 85px;
+      width: -100%;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      z-index: 1000;
+
+    }
+
+
+    nav ul {
+      float: right;
+      margin-right: 20px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      color: black;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    a:active,
+    a:hover {
+
+      color: rgb(170, 149, 42);
+      transition: .5s;
+
+    }
+
+    #become {
+      background-color: orange;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .checkbtn {
+      font-size: 30px;
+      color: black;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+
+    }
+
+    .checkbtn i.fa-times {
+      display: none;
+      /* Initially hide the closed icon */
+    }
+
+    #check:checked+.checkbtn i.fa-bars {
+      display: none;
+      /* Hide bars icon when checked */
+    }
+
+    #check:checked+.checkbtn i.fa-times {
+      display: block;
+      /* Show times icon when checked */
+      padding-top: 20px;
+    }
+
+    #check {
+      display: none;
+    }
+
+    @media (max-width: 952px) {
+      label.logo img {
+        width: 200px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+      nav ul li a {
+        font-size: 10px;
+
+      }
+    }
+
+    @media (max-width: 367px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+
+      }
+
+    }
+
+    @media (max-width: 348px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+    }
+
+    @media (max-width: 1274px) {
+      .checkbtn {
+        display: block;
+      }
+
+     nav ul {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: #2b2727;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        z-index: 1000;
+        transition: all 0.5s;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 15px 0px;
+        line-height: 15px;
+      }
+
+      nav ul li a {
+        font-size: 18px;
+        color: orange;
+      }
+
+      a:hover,
+      a.active {
+        background: none;
+        color: #e6d300;
+      }
+
+      #check:checked~ul {
+        left: 0;
+      }
+
+      main {
+        position: absolute;
+      }
+
+      #become {
+        background-color: #2b2727;
+      }
+    }
+
+
+    /* footer */
+    .footer {
+      display: flex;
+      background-image: url(images/footer/footer-new.png);
+      background-size: 100% 100%;
+      height: auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .itemone,
+    .itemtwo,
+    .itemthree {
+      margin-right: 30px;
+    }
+
+    .itemone li a {
+      font-size: 18px;
+    }
+
+    .itemtwo li a {
+      font-size: 18px;
+    }
+
+    .itemthree li a {
+      font-size: 18px;
+    }
+
+    .itemone .image {
+      background-color: white;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+
+
+    }
+
+    .itemone .image:hover {
+      background-color: orange;
+
+    }
+
+    .get {
+      font-size: 25px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+    }
+
+    .itemtwo,
+    .itemthree,
+    .itemfour h3 {
+      font-size: 18px;
+      font-weight: bolder;
+      color: orange;
+      margin-top: 10px;
+    }
+
+    .itemtwo li,
+    .itemthree li {
+      padding: 10px;
+    }
+
+    .itemfour p {
+      color: white;
+    }
+
+    .itemfour span {
+      color: white;
+      font-size: 30px;
+
+    }
+
+    .itemfour {
+      margin-bottom: 5px;
+      line-height: 30px;
+    }
+    .footer a {
+        /* font-size: 20px; */
+        color: white;
+      
+      }
+     
+
+    /* Media Query for Larger Screens (min-width: 768px) */
+    @media screen and (min-width: 768px) {
+      .footer {
+        /* Adjust styles for larger screens here */
+        height: auto;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour h3 {
+        /* Adjust styles for h3 on larger screens here */
+        font-size: 28px;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo li,
+      .itemthree li {
+        /* Adjust styles for list items on larger screens here */
+        padding: 15px;
+        /* for example, adjust as needed */
+      }
+
+      .itemfour img {
+        /* Adjust styles for images on larger screens here */
+        /* padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 5%;
+      padding-right: 5%; */
+      }
+    }
+
+    @media only screen and (max-width: 1030px) {
+      .footer {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+      }
+
+      .footer a {
+        font-size: 20px;
+        color: white;
+      }
+
+      .footer h3 {
+        font-size: 23px;
+      }
+
+      .itemone,
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        width: 100%;
+        text-align: center;
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        margin-top: 10px;
+      }
+    }
+
+    .wht-btn {
+      position: fixed;
+      bottom: 0%;
+      z-index: 1000;
+
+    }
+
+    .pic img {
+      width: 100%;
+      background-size: 100% 100%;
+    }
+
+    .h1{
+      font-size: 25px;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-color: orange;
+      color: #00155E;
+       background-color: rgb(237, 234, 231);
+    }
+    .main{
+      height: auto;
+      display: flex;
+      padding: 40px;
+      text-align: left;
+      transition: .2s;
+      background-color: rgb(237, 234, 231);
+    }
+    .main .ul .li{
+      list-style: disc;
+      margin: 10px;
+      color: rgb(9, 9, 9);
+
+    }
+    .main .ul .li:hover{
+      color: orange;
+
+    }
+    .main .ul .li a:hover{
+      letter-spacing: 5px;
+      color: orange;
+    }
+    .main .ul .li a{
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+      <!-- updating  -->
+      <i class="fa fa-times"></i><!-- Closed icon -->
+
+    </label>
+    <label class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></label>
+    <ul>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="Catalogue.htmll">PRODUCT</a></li>
+      <li><a href="services.html">SERVICES</a></li>
+      <li><a href="oil.html">OIL FINDER</a></li>
+      <li><a href="certificate.html">CERTIFICATES</a></li>
+      <li><a href="Events.html">NEWS & EVENTS</a></li>
+      <li><a href="destributor.html" id="become">BECOME A DESTRIBUTOR</a></li>
+
+
+    </ul>
+  </nav>
+  <div> <a
+      href="https://wa.me/+923020777892?text=Hi%2C%20I%27m%20enquiring%20from%20the%20GlobleLubricant.com%20website"
+      class="wht-btn" target="_blank">
+      <img src="images/whatsapp-logo.png" width="64px" height="64px">
+    </a></div>
+  <div class="sitmap">
+    <div class="pic">
+      <img src="images/sitemap-2.webp" alt="">
+    </div>
+    <div class="pages">
+      <div class="h1">
+        Pages
+      </div>
+      <div class="main">
+        <ul class="ul" style="list-style: disc;">
+          <li class="li"><a href="index.html">Home</a></li>
+          <li class="li"><a href="about.html">About</a></li>
+          <li class="li"><a href="">Oil Finder</a></li>
+          <li class="li"><a href="services.html">Services</a></li>
+          <li class="li"><a href="products.html">Products</a></li>
+          <li class="li"><a href="distributor.html">Become a distributor</a></li>
+          <li class="li"><a href="contact.html">Contact us</a></li>
+          <li class="li"><a href="cerfiticate.html">Certificate</a></li>
+          <li class="li"><a href="quality.html">Quality</a></li>
+          <li class="li"><a href="privacy.html">Privacy</a></li>
+          <li class="li"><a href="terms.html">Terms and condition</a></li>
+          <li class="li"><a href="Blog.html">Blog</a></li>
+          <li class="li"><a href="Careers.html">Careers</a></li>
+          <li class="li"><a href="datasheet.html">Datasheet</a></li>
+          <li class="li"><a href="Events.html">NEWS and Events</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="footer">
+
+    <div class="itemone">
+      <img src="images/footer/LOGO.png" width="80px" height="80px"> <br><br><br>
+      <a href="get.html" class="get">Get a Qoute</a> <br><br><br>
+      <a href="#"><img class="image" src="images/social/twitter-icon.png" width="25px" height="25px"></a>
+      <a href="#"><img class="image" src="images/social/instagram-icon.png" width="25px" height="auto"></a>
+      <a href="#"><img class="image" src="images/social/linkedin-icon.png" width="25px" height="auto"></a>
+      <a href="#"><img class="image" src="images/social/youtube-icon.png" width="25px" height="auto"></a>
+
+    </div>
+    <div class="itemtwo">
+      <h3>Explore</h3>
+      <li><a href="oil.html">Oil Finder</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="quaity.html">Quality Control</a></li>
+      <li><a href="Blog.html">Blog</a></li>
+      <li><a href="Careers.html">Careers</a></li>
+    </div>
+    <div class="itemthree">
+      <h3>Technical</h3>
+      <li><a href="certificate.html">certitficate</a></li>
+      <li><a href="datasheet.html">Datasheet</a></li>
+      <li><a href="sitemap">Sitemap</a></li>
+      <li><a href="Terms.html">Terms & Condition</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </div>
+    <div class="itemfour">
+      <h3>Get in touch</h3>
+      <img src="images/social/location_icon.png" width="10px" height="10px">
+      <span style="font-size: 12px;">Deira Dubai Beside Khan Sahab <br> parking auto mart shop no 24</span> <br>
+      <img src="images/social/tel.png" alt="" width="10px" height="10px">
+      <span style="font-size: 15px;">+971568424874</span> <br>
+      <img src="images/social/email_icon.png" alt="" width="10px" height="10px">
+      <span style="font-size: 15px;">info@lubrizoiluae.com</span>
+    </div>
+  </section>
+</body>
+
+</html>

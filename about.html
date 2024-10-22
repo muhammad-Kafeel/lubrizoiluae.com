@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lubrizoil</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    
+    <!-- Insert to your webpage before the </head> -->
+    <script src="sliderengine/jquery.js"></script>
+    <script src="sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+    <script src="sliderengine/initslider-1.js"></script>
+    
+    <!-- Insert to your webpage before the </head> -->
+    <!--<script src="sliderengine/jquery.js"></script>-->
+    <!--<script src="sliderengine/amazingslider.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">-->
+    <!--<script src="sliderengine/initslider-1.js"></script>-->
+    <!-- End of head section HTML codes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.Logo {
+    display: block;
+    width: 40px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.logo img{
+    
+    width: 200px;
+    height: 90px;
+    line-height: 80px;
+    padding: 0 20px;
+  
+    
+}
+nav {
+    background-color:white;
+    position: sticky;
+    top:0;
+    height: 85px;
+    width: -100%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index:1000;
+    
+}
+
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display:inline-block;
+    line-height: 80px;
+    margin: 0 8px;
+}
+
+nav ul li a{
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a:active, a:hover {
+   
+    color:rgb(170, 149, 42);
+    transition: .5s;
+    
+}
+#become{
+  background-color:orange;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor:pointer;
+    display: none;
+
+}
+.checkbtn i.fa-times {
+  display: none; /* Initially hide the closed icon */
+}
+
+#check:checked+.checkbtn i.fa-bars {
+  display: none; /* Hide bars icon when checked */
+}
+
+#check:checked+.checkbtn i.fa-times {
+  display: block; /* Show times icon when checked */
+  padding-top: 20px;
+}
+#check {
+    display: none;
+}
+@media (max-width: 952px){
+    label.logo img{
+        width: 200px;
+        height:90px; 
+        padding: 0 10px;
+    }
+    nav ul li a{
+        font-size: 10px;
+
+    }
+}
+@media  (max-width: 367px){
+    label.logo img{
+        width: 180px;
+        height:90px; 
+        padding:0 10px;
+        
+    }
+
+  }
+@media  (max-width: 348px){
+        label.logo img{
+          width: 180px;
+          height:90px; 
+          padding:0 10px;
+        }
+      
+}
+
+@media (max-width: 1274px){
+    .checkbtn{
+        display: block;
+    }
+    
+    ul{
+        position:absolute;
+        width: 100%;
+        height:auto;
+        background-color: #2b2727;
+        top:80px;
+        left: -100%; 
+        text-align: center;
+        z-index: 1000;
+        transition: all 0.5s;
+    }
+    
+    nav ul li{
+        display: block;
+        margin: 15px 0px;
+        line-height: 15px;
+    }
+    nav ul li a{
+        font-size: 18px;
+        color:orange;
+    }
+    a:hover,a.active{
+        background: none;
+        color:#e6d300;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    main {
+        position:absolute;
+    }
+    #become{
+background-color: #2b2727;
+}
+}
+.pic img{
+    width: 100%;
+    background-size: 100% 100%;
+}
+.h1{
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    color: #00155E;
+}
+.paragraph {
+ padding: 80px;
+}
+.paragraph p{
+    font-size: 20px;
+    line-height: 40px;
+    word-spacing: 20px;
+}
+.paragraph img{
+    width: 100%;
+    background-size: 100% 100%;
+}
+@media (max-width: 834px){
+  .h1{
+    font-size: 16px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    color: #00155E;
+}
+.paragraph p{
+    font-size: 18px;
+    line-height: 20px;
+    word-spacing: 10px;
+}
+.paragraph {
+ padding: 10px 10px 50px 50px;
+}
+}
+@media (max-width: 411px){
+  .h1{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    color: #00155E;
+}
+.paragraph p{
+    font-size: 16px;
+    line-height: 20px;
+    word-spacing: 10px;
+}
+}
+
+/* CARDS */
+    /* card */
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      /* padding-left: 80px;
+      padding-right: 80px; */
+    }
+
+    .card {
+      width: 400px;
+      min-height: 300px;
+      margin: 20px 10px;
+      overflow: hidden;
+      flex-basis: 30%
+    }
+
+    .card-image {
+
+      height: 220px;
+      margin-bottom: 15px;
+
+    }
+
+    .card1 {
+      background-image: url("images/viwe/1.jpg");
+      background-size: 100% 100%;
+    }
+
+    .card2 {
+      background-image: url("images/viwe/2.jpg");
+      background-size: 100% 100%;
+    }
+
+    .card3 {
+      background-image: url("images/viwe/3.jpg");
+      background-size: 100% 100%;
+    }
+
+    .card4 {
+      background-image: url("images/viwe/4.jpg");
+      background-size: 100% 100%;
+    }
+    .card5 {
+      background-image: url("images/viwe/5.jpg");
+      background-size: 100% 100%;
+    }
+    .card6 {
+      background-image: url("images/viwe/6.jpg");
+      background-size: 100% 100%;
+    }
+    .card7 {
+      background-image: url("images/viwe/7.jpg");
+      background-size: 100% 100%;
+    }
+    .card8 {
+      background-image: url("images/viwe/8.jpg");
+      background-size: 100% 100%;
+    }
+    .card9 {
+      background-image: url("images/viwe/9.jpg");
+      background-size: 100% 100%;
+    }
+
+
+    .card h2 {
+      font-size: large;
+      display: block;
+      height: auto;
+      letter-spacing: 1.5px;
+    }
+
+    .card p {
+      display: block;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 16px;
+      height: auto;
+      overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .card a {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      margin: 0px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .container {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-basis: 40%;
+      }
+
+      .card {
+        width: 400px;
+        min-height: 400px;
+        margin: 20px 10px;
+        overflow: hidden;
+        flex-basis: 45%
+      }
+
+      .card-image {
+        height: 220px;
+        margin-bottom: 15px;
+      }
+
+      .card p {
+        display: block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 16px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .card a {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+      }
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .container {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-basis: 80%;
+      }
+
+      .card {
+        width: 500px;
+        min-height: 400px;
+        margin: 20px 10px;
+        overflow: hidden;
+        flex-basis: 950%
+      }}
+      @media only screen and (max-width: 400px) {
+        .container {
+          display: flex;
+          justify-content: space-around;
+          padding-left: 10px;
+          padding-right: 10px;
+          flex-basis: 90%;
+        }
+  
+        .card {
+          width: 380px;
+          min-height: 400px;
+          margin: 20px 10px;
+          overflow: hidden;
+          flex-basis: 90%
+        }}
+
+
+
+
+
+/* footer */
+.footer{
+    display: flex;
+    background-image: url(images/footer/footer-new.png);
+    background-size: 100% 100%;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  .itemone, .itemtwo ,.itemthree {
+    margin-right: 30px;
+  }
+  .itemone  li a{
+        font-size:18px;
+    }
+     .footer a {
+        /* font-size: 20px; */
+        color: white;
+      
+      }
+  .itemtwo  li a{
+        font-size:18px;
+    }
+    .itemthree li a{
+        font-size:18px;
+    }
+  .itemone .image{
+    background-color:white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding:2px;
+    
+    
+  }
+  .itemone .image:hover{
+    background-color:orange;
+    
+}
+ .get{
+   font-size:25px ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   
+ }
+ .itemtwo ,.itemthree ,.itemfour h3{
+font-size: 18px;
+font-weight: bolder;
+color: orange;
+margin-top: 10px;
+ }
+ .itemtwo li ,.itemthree li{
+    padding: 10px;
+ }
+
+ .itemfour p {
+    color: white;
+ }
+.itemfour span{
+    color: white;
+    font-size:30px;
+   
+}
+.itemfour{
+  margin-bottom: 5px;
+  line-height: 30px;
+}
+/* Media Query for Larger Screens (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .footer {
+      /* Adjust styles for larger screens here */
+      height: auto; /* for example, adjust as needed */
+    }
+  
+    .itemtwo,
+    .itemthree,
+    .itemfour h3 {
+      /* Adjust styles for h3 on larger screens here */
+      font-size: 28px; /* for example, adjust as needed */
+    }
+  
+    .itemtwo li,
+    .itemthree li {
+      /* Adjust styles for list items on larger screens here */
+      padding: 15px; /* for example, adjust as needed */
+    }
+  
+.itemfour img {
+      /* Adjust styles for images on larger screens here */
+      /* padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 5%;
+      padding-right: 5%; */
+    }
+  }
+@media only screen and (max-width: 1030px) {
+    .footer {
+      flex-direction: column;
+      height: auto;
+      width:100%;
+    }
+    .footer a{
+        font-size:20px;
+        color:white;
+    }
+    .footer h3{
+        font-size:23px;
+    }
+  
+    .itemone,
+    .itemtwo,
+    .itemthree,
+    .itemfour {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .itemtwo,
+    .itemthree,
+    .itemfour {
+      margin-top: 10px;
+    }
+  }
+
+   .wht-btn{
+    position: fixed;
+    bottom: 0%;
+    z-index: 1000;
+   
+  } 
+ 
+    </style>
+</head>
+<body>
+   
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+            <!-- updating  -->
+            <i class="fa fa-times"></i><!-- Closed icon -->
+
+        </label>
+ <label class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></label>        <ul>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="Catalogue.html">PRODUCT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="oil.html">OIL FINDER</a></li>
+            <li><a href="certificate.html">CERTIFICATES</a></li>
+            <li><a href="Events.html">NEWS & EVENTS</a></li>
+            <li><a href="distributor.html" id="become">BECOME A DESTRIBUTOR</a></li>
+          
+            
+        </ul>
+    </nav>
+        <div> <a href="https://wa.me/+971568424874?text=Hi%2C%20I%27m%20enquiring%20from%20the%20lubrizoiluae.com%20website" class="wht-btn"
+            target="_blank">
+            <img src="images/whatsapp-logo.png"  width="64px" height="64px">
+        </a></div>
+        <div class="pic">
+            <img src="images/our-story (1).webp" alt="">
+        </div>
+        <div class="h1">
+            <h1>About us</h1>
+        </div>
+        <div class="paragraph">
+            <p>
+                Lubrizoiluae is a leading lubricant manufacturing company, registered in Hamriyah Free Zone, Sharjah, UAE. It was established in 
+                2005 as the flag bearer in the UAE of a group of lubricant manufacturing oil exporting companies with decades of experience.
+                <br><br><br>
+
+With a primary focus on the GCC, Middle East, Far East and Africa, lubrizoiluae is uniquely positioned to lead in manufacturing, development 
+and marketing in the regional and international markets, providing unmatched level of support and services for its customers.
+<br><br><br>
+
+Having realised that a critical factor of success in any venture is the access to specific industry knowledge, the company is founded and 
+articulated by a team of leading industry professionals, strategic partners, and business associates, which in turn have encouraged and emboldened 
+the company to participate in one of the most challenging markets in the world. <br><br><br>
+
+Lubrizoiluae uses state of the art automated blending systems with latest machineries to keep products precisely blended avoiding any avoid human errors, ensuring consistency in the delivery of products in scheduled time without compromising in quality.
+
+Lubrizoiluae lubricants are made from first grade mineral oils, virgin base oils, and high quality additives to meet industry standards.
+            </p>
+            <img src="images/about-timeline.webp" alt="">
+        <!-- </div> -->
+
+          <H1>At Lubrizoiluae, we focus on three main core values:</H1><br>
+          <H1>Satisfaction:</H1>
+          <p> Customer satisfaction is our foremost commitment. We are customer centric in everything we do. We are focused on providing the 
+            best possible experience for our distributors, dealers and end customers.</p> <br>
+            <h1>Quality: </h1>
+            <p>Our business is all about protection, protection of equipment, protection of employees while operating equipment, and protection of environment. 
+              This can only be achieved by striving and achieving quality in our products and processes.</p><br>
+              <h1>Passion:</h1>
+            <p>We are passionate about doing our business and creating a win-win situation for ourselves, our customers, our products, and our services.</p>
+    
+          </div>
+        <section class="container">
+          <article class="card">
+              <div class="card-image card1"></div>
+              <h2>X-TREM SPORTS</h2>
+              <p>Go to the extreme with out X-trem range that is specifically formulated to grant race your car the power and speed you need to win the race.</p>
+              <a href="#">View Product ></a>
+          </article>
+          <article class="card">
+              <div class="card-image card2"></div>
+              <h2>AUTOMOTIVE</h2>
+              <p>Your vehicle is not just an engine and wheels, it is a complicated and sophisticated machine with many parts and components. Ensure that it is a well-oiled machine throughout your journey with out
+                   range of high-quality lubricants including diesel & petrol engine oils,transmission fluids,gear oils and antifreeze/coolant.</p>
+              <a href="#">View Product ></a>
+          </article>
+          <article class="card">
+              <div class="card-image card3"></div>
+              <h2>GREASES</h2>
+              <p>Keep the ball rolling with our greases that are designed to maintain and protect your machine parts in different working conditions.</p>
+              <a href="#">View Product ></a>
+          </article>
+       
+      </section>
+    
+    <section class="footer">
+        
+        <div class="itemone">
+          <a href="index.html"><img src="images/footer/LOGO.png"  width="80px" height="80px"></a> <br><br><br>
+          <a href="#" class="get">Get a Qoute</a> <br><br><br>
+          <a href="#"><img class="image" src="images/social/twitter-icon.png" width="25px" height="25px" ></a>
+          <a href="#"><img class="image" src="images/social/instagram-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/linkedin-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/youtube-icon.png" width="25px" height="auto" ></a>
+          
+        </div>
+            <div class="itemtwo">
+              <h3>Explore</h3>
+              <li><a href="oil.html">Oil Finder</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="quality.html">Quality Control</a></li>
+              <li><a href="Blog.html">Blog</a></li>
+              <li><a href="Careers.html">Careers</a></li>
+            </div>
+            <div class="itemthree">
+              <h3>Technical</h3>
+              <li><a href="certificate.html">Certitficate</a></li>
+              <li><a href="Datasheet.html">Datasheet</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+              <li><a href="terms.html">Terms & Condition</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </div>
+            <div class="itemfour">
+              <h3>Get in touch</h3>
+              <img src="images/social/location_icon.png" width="10px" height="10px">
+             <span style="font-size: 12px;">Deira Dubai Beside Khan Sahab <br> parking auto mart shop no 24</span> <br>
+                <img src="images/social/tel.png" alt="" width="10px" height="10px">
+                <span style="font-size: 15px;">+971568424874</span> <br>
+                <img src="images/social/email_icon.png" alt="" width="10px" height="10px">
+                <span style="font-size: 15px;">info@lubrizoiluae.com</span>
+            </div>
+    </section>
+
+     
+    
+</body>
+</html>

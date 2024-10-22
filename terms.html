@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lubrizoil</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+  <!-- Insert to your webpage before the </head> -->
+  <script src="sliderengine/jquery.js"></script>
+  <script src="sliderengine/amazingslider.js"></script>
+  <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+  <script src="sliderengine/initslider-1.js"></script>
+
+  <!-- Insert to your webpage before the </head> -->
+  <!--<script src="sliderengine/jquery.js"></script>-->
+  <!--<script src="sliderengine/amazingslider.js"></script>-->
+  <!--<link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">-->
+  <!--<script src="sliderengine/initslider-1.js"></script>-->
+  <!-- End of head section HTML codes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-decoration: none;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .Logo {
+      display: block;
+      width: 40px;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+
+    .logo img {
+
+      width: 200px;
+      height: 90px;
+      line-height: 80px;
+      padding: 0 20px;
+
+
+    }
+
+    nav {
+      background-color: white;
+      position: sticky;
+      top: 0;
+      height: 85px;
+      width: -100%;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      z-index: 1000;
+
+    }
+
+
+    nav ul {
+      float: right;
+      margin-right: 20px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      color: black;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    a:active,
+    a:hover {
+
+      color: rgb(170, 149, 42);
+      transition: .5s;
+
+    }
+
+    #become {
+      background-color: orange;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .checkbtn {
+      font-size: 30px;
+      color: black;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+
+    }
+
+    .checkbtn i.fa-times {
+      display: none;
+      /* Initially hide the closed icon */
+    }
+
+    #check:checked+.checkbtn i.fa-bars {
+      display: none;
+      /* Hide bars icon when checked */
+    }
+
+    #check:checked+.checkbtn i.fa-times {
+      display: block;
+      /* Show times icon when checked */
+      padding-top: 20px;
+    }
+
+    #check {
+      display: none;
+    }
+
+    @media (max-width: 952px) {
+      label.logo img {
+        width: 200px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+      nav ul li a {
+        font-size: 10px;
+
+      }
+    }
+
+    @media (max-width: 367px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+
+      }
+
+    }
+
+    @media (max-width: 348px) {
+      label.logo img {
+        width: 180px;
+        height: 90px;
+        padding: 0 10px;
+      }
+
+    }
+
+    @media (max-width: 1274px) {
+      .checkbtn {
+        display: block;
+      }
+
+      ul {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: #2b2727;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        z-index: 1000;
+        transition: all 0.5s;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 15px 0px;
+        line-height: 15px;
+      }
+
+      nav ul li a {
+        font-size: 18px;
+        color: orange;
+      }
+
+      a:hover,
+      a.active {
+        background: none;
+        color: #e6d300;
+      }
+
+      #check:checked~ul {
+        left: 0;
+      }
+
+      main {
+        position: absolute;
+      }
+
+      #become {
+        background-color: #2b2727;
+      }
+    }
+
+    .pic img {
+      width: 100%;
+      background-size: 100% 100%;
+    }
+
+    .h1 {
+      font-size: 25px;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-color: orange;
+      color: #00155E;
+    }
+
+   
+
+    .paragraph {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 20px;
+      line-height: 40px;
+      word-spacing: 20px;
+      padding: 100px;
+
+    }
+
+    @media (max-width: 834px) {
+      .h1 {
+        font-size: 16px;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: orange;
+        color: #00155E;
+      }
+     
+      .paragraph p {
+        font-size: 18px;
+        line-height: 20px;
+        word-spacing: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .paragraph {
+        padding: 10px 50px;
+      }
+    }
+
+    @media (max-width: 411px) {
+      .h1 {
+        font-size: 15px;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-color: orange;
+        color: #00155E;
+      }
+
+      .paragraph p {
+        font-size: 16px;
+        line-height: 20px;
+        word-spacing: 10px;
+      }
+    }
+
+    /* footer */
+    .footer {
+      display: flex;
+      background-image: url(images/footer/footer-new.png);
+      background-size: 100% 100%;
+      height: auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .itemone,
+    .itemtwo,
+    .itemthree {
+      margin-right: 30px;
+    }
+
+    .itemone li a {
+      font-size: 18px;
+    }
+
+    .itemtwo li a {
+      font-size: 18px;
+    }
+
+    .itemthree li a {
+      font-size: 18px;
+    }
+     .footer a{
+         color:white;
+     }
+
+    .itemone .image {
+      background-color: white;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+
+
+    }
+
+    .itemone .image:hover {
+      background-color: orange;
+
+    }
+
+    .get {
+      font-size: 25px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+    }
+
+    .itemtwo,
+    .itemthree,
+    .itemfour h3 {
+      font-size: 18px;
+      font-weight: bolder;
+      color: orange;
+      margin-top: 10px;
+    }
+
+    .itemtwo li,
+    .itemthree li {
+      padding: 10px;
+    }
+
+    .itemfour p {
+      color: white;
+    }
+
+    .itemfour span {
+      color: white;
+      font-size: 30px;
+
+    }
+
+    .itemfour {
+      margin-bottom: 5px;
+      line-height: 30px;
+    }
+
+    /* Media Query for Larger Screens (min-width: 768px) */
+    @media screen and (min-width: 768px) {
+      .footer {
+        /* Adjust styles for larger screens here */
+        height: auto;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour h3 {
+        /* Adjust styles for h3 on larger screens here */
+        font-size: 28px;
+        /* for example, adjust as needed */
+      }
+
+      .itemtwo li,
+      .itemthree li {
+        /* Adjust styles for list items on larger screens here */
+        padding: 15px;
+        /* for example, adjust as needed */
+      }
+
+      .itemfour img {
+        /* Adjust styles for images on larger screens here */
+        /* padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 5%;
+      padding-right: 5%; */
+      }
+    }
+
+    @media only screen and (max-width: 1030px) {
+      .footer {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+      }
+
+      .footer a {
+        font-size: 20px;
+        color: white;
+      }
+
+      .footer h3 {
+        font-size: 23px;
+      }
+
+      .itemone,
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        width: 100%;
+        text-align: center;
+      }
+
+      .itemtwo,
+      .itemthree,
+      .itemfour {
+        margin-top: 10px;
+      }
+    }
+
+    .wht-btn {
+      position: fixed;
+      bottom: 0%;
+      z-index: 1000;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+      <!-- updating  -->
+      <i class="fa fa-times"></i><!-- Closed icon -->
+
+    </label>
+    <label class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></label>
+ <ul>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="products.html">PRODUCT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="#">OIL FINDER</a></li>
+            <li><a href="certificate.html">CERTIFICATES</a></li>
+            <li><a href="Events.html">NEWS & EVENTS</a></li>
+            <li><a href="distributor.html" id="become">BECOME A DESTRIBUTOR</a></li>
+          
+            
+        </ul>
+  </nav>
+  <div> <a
+      href="https://wa.me/+923020777892?text=Hi%2C%20I%27m%20enquiring%20from%20the%20GlobleLubricant.com%20website"
+      class="wht-btn" target="_blank">
+      <img src="images/whatsapp-logo.png" alt="whatsapp-logo" width="64px" height="64px">
+    </a></div>
+  <div class="pic">
+    <img src="images/termsconditions-2.webp" alt="">
+  </div>
+  <div class="h1">
+    <h1>Terms & Condition</h1>
+  </div>
+  <div class="paragraph">
+    <p>
+    <h3> Welcome to lubrizoil </h3>
+    These terms and conditions outline the rules and regulations for the use of <b>lubrizoil</b> Website, located at
+    https://lubrizoiluae.com
+    By accessing this website we assume you accept these terms and conditions. Kindly do not continue to use <b>lubrizoil</b>
+    if you do not agree to take all of the terms and conditions stated on this page.
+    The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all
+    Agreements: “Client”, “You” and “Your” refers to you, the
+    person log on this website and compliant to the Company’s terms and conditions. “The Company”, “Ourselves”, “We”,
+    “Our” and “Us”, refers to our Company. “Party”, “Parties”,
+    or “Us”, refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of
+    payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the
+    express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in
+    accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in
+    the singular,
+    plural, capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.
+    <br><br>
+
+    <h3>Cookies</h3>
+    We employ the use of cookies. By accessing <b>lubrizoil</b>, you agree to use cookies in agreement with the <b>lubrizoil</b>
+    Privacy Policy.
+    Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our
+    website to enable the functionality
+    of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may
+    also use cookies. <br><br>
+
+    <h3>License</h3>
+    Unless otherwise stated, <b>lubrizoil</b> and/or its licensors own the intellectual property rights for all material on
+    <b>lubrizoil</b>. All intellectual property rights are reserved. You may access this from <b>lubrizoil</b> for your own personal
+    use subjected to restrictions set in these terms and conditions. <br><br>
+
+    <h3>You are not allowed to:</h3>
+
+    Republish material from <b>lubrizoil</b>; <br>
+    Sell, rent or sub-license material from <b>lubrizoil</b>; <br>
+    Reproduce, duplicate or copy material from <b>lubrizoil</b>; <br> or
+    Redistribute content from <b>lubrizoil</b> <br>
+    This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the Terms And
+    Conditions Generator.
+    Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas
+    of the website. <b>lubrizoil</b> does not filter, edit, publish or review Comments prior to their presence on the website.
+    Comments do not reflect the views and opinions of <b>lubrizoil</b>, its agents and/or affiliates. Comments reflect the
+    views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws,
+    <b>lubrizoil</b> shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a
+    result of any use of and/or posting of and/or appearance of the Comments on this website.
+    <b>lubrizoil</b> reserves the right to monitor all Comments and to remove any Comments which can be considered
+    inappropriate, offensive or causes breach of these Terms and Conditions.
+
+    <h3>You warrant and represent that:</h3> <br>
+
+    You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;
+    The Comments do not invade any intellectual property right, including without limitation copyright, patent or
+    trademark of any third party;
+    The Comments do not contain any defamatory, libellous, offensive, indecent or otherwise unlawful material which is
+    an invasion of privacy; and
+    The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful
+    activity.
+    You hereby grant <b>lubrizoil</b> a non-exclusive license to use, reproduce, edit and authorise others to use, reproduce
+    and edit any of your Comments in any and all forms, formats or media.
+
+    <h3>Hyperlinking to our Content</h3>
+
+    The following organisations may link to our Website without prior written approval:
+
+    Government agencies;<br>
+    Search engines;<br>
+    News organizations;<br>
+    Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other
+    listed businesses; <br>and
+    System wide Accredited Businesses except soliciting non-profit organisations, charity shopping malls, and charity
+    fundraising groups which may not hyperlink to our Web site.
+    These organisations may link to our home page, to publications or to other Website information so long as the link:
+    (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking
+    party and its products and/or services; and (c) fits within the context of the linking party’s site.
+
+    We may consider and approve other link requests from the following types of organizations:
+
+    Commonly-known consumer and/or business information sources;<br>
+    Dot.com community sites;<br>
+    Associations or other groups representing charities;<br>
+    Online directory distributors;<br>
+    Internet portals;<br>
+    Accounting, law and consulting firms;<br> and
+    Educational institutions and trade associations. <br>
+    We will approve link requests from these organisations if we decide that: (a) the link would not make us look
+    unfavourably to ourselves or to our accredited businesses; (b) the organisation does not have any negative records
+    with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of <b>lubrizoil</b>; and (d)
+    the link is in the context of general resource information. <br>
+    These organisations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not
+    falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c) fits
+    within the context of the linking party’s site. <br>
+    If you are one of the organisations listed in paragraph 2 above and are interested in linking to our website, you
+    must inform us by sending an e-mail to <b>lubrizoil</b>. Please include your name, your organisation name, contact
+    information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a
+    list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response. <br>
+
+    <h3>Approved organisations may hyperlink to our Website as follows:</h3>
+
+    By use of our corporate name; <br>
+    By use of the uniform resource locator being linked to;<br> or
+    By use of any other description of our Website being linked to that makes sense within the context and format of
+    content on the linking party’s site.<br>
+    No use of <b>lubrizoil</b>’slogo or other artwork will be allowed for linking absent a trademark license agreement.
+
+    <h3>iFrames</h3>
+    Without prior approval and written permission, you may not create frames around our webpages that alter in any way
+    the visual presentation or appearance of our Website. <br>
+
+   <h3> Content Liability</h3>
+    We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us
+    against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted
+    as libellous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other
+    violation of, any third party rights. <br><br>
+
+    <h3>Your Privacy</h3>
+    <span style="color: red;">Please read Privacy Policy</span>
+
+    <h3>Reservation of Rights</h3>
+    We reserve the right to request that you remove all links or any particular link to our Website. You approve to
+    immediately remove all links to our Website upon request. We also reserve the right to amen these terms and
+    conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and
+    follow these linking terms and conditions. <br>
+
+    <h3>Removal of links from our website</h3>
+    If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any
+    moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
+    We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy;
+    nor do we promise to ensure that the website remains available or that the material on the website is kept up to
+    date.
+
+   <h3> Disclaimer</h3>
+    To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions
+    relating to our website and the use of this website. Nothing in this disclaimer will:
+
+    Limit or exclude our or your liability for death or personal injury;
+    Limit or exclude our or your liability for fraud or fraudulent misrepresentation;
+    Limit any of our or your liabilities in any way that is not permitted under applicable law; or
+    Exclude any of our or your liabilities that may not be excluded under applicable law.
+    The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject
+    to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities
+    arising in contract, in tort and for breach of statutory duty.
+    As long as the website and the information and services on the website are provided free of charge, we will not be
+    liable for any loss or damage of any nature. 
+     </p>
+    </div>
+    <section class="footer">
+ <div class="itemone">
+          <a href="index.html"><img src="images/footer/LOGO.png"  width="80px" height="80px"></a> <br><br><br>
+          <a href="get.html" class="get">Get a Qoute</a> <br><br><br>
+          <a href="#"><img class="image" src="images/social/twitter-icon.png" width="25px" height="25px" ></a>
+          <a href="#"><img class="image" src="images/social/instagram-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/linkedin-icon.png" width="25px" height="auto" ></a>
+          <a href="#"><img class="image" src="images/social/youtube-icon.png" width="25px" height="auto" ></a>
+          
+        </div>
+            <div class="itemtwo">
+              <h3>Explore</h3>
+              <li><a href="oil.html">Oil Finder</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="quality.html">Quality Control</a></li>
+              <li><a href="Blog.html">Blog</a></li>
+              <li><a href="Careers.html">Careers</a></li>
+            </div>
+            <div class="itemthree">
+              <h3>Technical</h3>
+              <li><a href="certificate.html">certitficate</a></li>
+              <li><a href="Datasheet.html">Datasheet</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+              <li><a href="terms.html">Terms & Condition</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </div>
+            <div class="itemfour">
+              <h3>Get in touch</h3>
+              <img src="images/social/location_icon.png" width="20px" height="20px">
+             <span style="font-size: 12px;">Deira Dubai beside khan sahab parking auto mart shop no 24</span> <br>
+                <img src="images/social/tel.png" alt="" width="20px" height="20px">
+                <span style="font-size: 15px;">+971568424874</span> <br>
+                <img src="images/social/email_icon.png" alt="" width="20px" height="20px">
+                <span style="font-size: 15px;">info@lubrizoiluae.com</span>
+            </div>
+    </section>
+
+
+
+</body>
+
+</html>

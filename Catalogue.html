@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: stretch;
+        width: 100%;
+        height: auto;
+    }
+
+    .aside {
+        flex-basis: 35%;
+        overflow-y: scroll;
+        line-height: 3;
+        line-height: 1.5;
+        height: 120vh;
+        background-color: rgba(236, 234, 234, 0.726);
+        padding: 15px;
+    }
+    .aside p {
+        text-align: center;
+     
+        
+    }
+    .aside li{
+        list-style: none;
+    }
+    .aside li a {
+        text-align: center;
+        font-size: 15px;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        transition: .5s;
+       
+    }
+    .aside li a:hover{
+        color: orange;
+        letter-spacing: 2px;
+
+    }
+
+
+    .aside::-webkit-scrollbar {
+        width: 6px;
+        /* Width of the scrollbar */
+    }
+
+    .aside::-webkit-scrollbar-thumb {
+        background-color: orange;
+        /* Color of the scrollbar thumb */
+        border-radius: 2px;
+        /* Rounded corners */
+    }
+
+    .aside::-webkit-scrollbar-track {
+        background-color: rgb(213, 213, 213);
+        /* Color of the scrollbar track */
+    }
+
+    .detail {
+        flex-basis: 65%;
+        text-align: center;
+
+    }
+
+    .header {
+        padding: 20px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+
+    .pic {
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .pic img {
+        width: 300px;
+        height: auto;
+        align-items: center;
+
+    }
+
+    .images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .images img {
+        width: 50px;
+        height: auto;
+        cursor: pointer;
+
+
+    }
+
+    .detalis {
+        color: rgb(0, 0, 0);
+        padding-top: 20px;
+        width: 100%;
+        font-size: 20px;
+        box-shadow: 2px 2px 5px 2px black; 
+         display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(236, 234, 234, 0.726);
+        margin: 2px;
+        
+       
+
+    }
+
+    .detalis p {
+        text-align: center;
+        padding-left: 10px;
+        word-spacing: 15px;
+    }
+
+    button {
+        background-color: rgb(24, 155, 24);
+        color: white;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 0px;
+        width: 150px;
+        border: 1px solid rgb(0, 0, 0);
+        transition: .5s;
+        
+
+    }
+
+    button:hover {
+        padding-right: 50px;
+        cursor: pointer;
+        color: white;
+    }
+
+    @media screen and (max-width : 700px) {
+        .header h1{
+            font-size: 19px;
+        }
+        .aside {
+            flex-basis: 40%;
+            overflow-y: scroll;
+            line-height: .9;
+            background-color: rgba(236, 234, 234, 0.726);
+        }
+        .aside h1,li{
+            font-size: 25px;
+        }
+
+        .aside::-webkit-scrollbar {
+            width: 4px;
+            /* Width of the scrollbar */
+        }
+
+        .aside::-webkit-scrollbar-thumb {
+            background-color: orange;
+            /* Color of the scrollbar thumb */
+            border-radius: 2px;
+            /* Rounded corners */
+        }
+
+        .aside::-webkit-scrollbar-track {
+            background-color: white;
+            /* Color of the scrollbar track */
+        }
+        .aside li a:hover{
+        color: orange;
+        letter-spacing: .5px;
+
+    }
+
+        .detail {
+            flex-basis: 60%;
+        }
+        .detalis {
+        color: rgb(0, 0, 0);
+        padding-top: 20px;
+        width: 100%;
+        font-size: 12px;
+        box-shadow: 2px 2px 5px 2px black;
+                display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(248, 243, 243, 0.879);
+        margin: 2px;
+       
+
+    }
+
+    .detalis p {
+        text-align: left;
+        padding-left: 10px;
+        word-spacing: 15px;
+    }
+
+        .pic {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .pic img {
+            width: 250px;
+            height: auto;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
+
+
+    @media screen and (max-width:400px) {
+        .aside {
+            flex-basis: 40%;
+            background-color: rgba(248, 243, 243, 0.879);
+            overflow-y: scroll;
+           
+
+        }
+        .aside h1{
+            font-size: 15px;
+        }
+        .aside li a{
+            font-size: 10px;
+            line-height:.5;
+        }
+
+        .aside::-webkit-scrollbar {
+            width: 4px;
+            /* Width of the scrollbar */
+        }
+
+        .aside::-webkit-scrollbar-thumb {
+            background-color: orange;
+            /* Color of the scrollbar thumb */
+            border-radius: 2px;
+            /* Rounded corners */
+        }
+
+        .aside::-webkit-scrollbar-track {
+            background-color: rgb(213, 213, 213);
+            /* Color of the scrollbar track */
+        }
+        .aside li a:hover{
+        color: orange;
+        letter-spacing: .5px;
+
+    }
+
+        UL li {
+            text-wrap: wrap;
+        }
+
+        .detail {
+            flex-basis: 60%;
+        }
+        .detalis {
+        color: rgb(0, 0, 0);
+        padding-top: 20px;
+        width: 100%;
+        font-size: 15px;
+        box-shadow: 1px 1px 2px 1px black;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(248, 243, 243, 0.879);
+        overflow-x: scroll;
+        margin: 2px;
+       
+
+    }
+
+    .detalis p {
+        text-align: left;
+        padding-left: 10px;
+        word-spacing: 15px;
+    }
+
+        .pic {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .pic img {
+            width: 200px;
+            height: auto;
+            align-items: center;
+            cursor: pointer;
+            ;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="aside">
+            <h1>Products List</h1>
+            <li><a href="#"> TOYOTA 20W-50 SJ Motor Oil 1-Litter</a></li>
+           <P>More Products Coming soon</P>
+        </div>
+        <div class="detail">
+            <div class="header">
+                <h1><b><span style="color: orange;">TOYOTA</span> 20W-50 SJ Motor Oil <span style="color: orange;">1-Litter</span></b></h1>
+            </div>
+            <div class="pic">
+                <a href="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 0.jpg"> <img
+                        src="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 0.jpg"></a>
+            </div>
+
+            <div class="images">
+                <a href="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 2.jpg"><img
+                        src="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 2.jpg" alt=""></a>
+                <a href="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 3.jpg"><img
+                        src="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 3.jpg" alt=""></a>
+                <a href="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 4.jpg"><img
+                        src="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 4.jpg" alt=""></a>
+                <a href="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 5.jpg"><img
+                        src="catalogue-images/1 Toyota Motor Oil 20w-50 sj 1l 5.jpg" alt=""></a>
+            </div>
+
+
+            <div class="detalis">
+                <h3> TOYOTA 20W-50 SJ Motor Oil 1-Litter</h3><br>
+                <p>
+                    BOX Price:<span style="color: Green; font-weight: bolder;">$59.90</span><br>
+                    Pieces Per Box: 24<br>
+                    Min Order Quantity (BOX): 10<br>
+                    G.W/Ctn: 23<br>
+                    Carton Size(cm): 37 x 33 x 27<br>
+                    CAR Model: TOYOTA <br>
+                    Grade: SJ<br>
+                    Type: 20W-50<br>
+                    Specification: 1L<br>
+                    OEM: 08880-83227<br> </p>
+                <a href="https://wa.me/+971568424874?text=Hi%2C%20I'm%20enquiring%20from%20the%20lubrizoilae.com%20website%0A%0ACAR%20Model%20%20%20%20TOYOTA%20%0AGrade%20%20%20%20%20%20%20%20%20%20%20%20%20SJ%20%0AType%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2020W-50%20%0ASpecification%201L%20%0AOEM%20%20%20%20%20%20%20%20%20%20%20%20%20%2008880-83227%0A%0ABOX%20Price%20%20%20%20%20%20%20%20%20$59.90%0APieces%20Per%20Box%20%2024%0AMOQ(BOX)%20%20%20%20%20%20%2010%0AG.W/Ctn%20%20%20%20%20%20%20%20%20%20%20%2023%0ACarton%20Size(cm)%2037 x 33 x 27%0A"
+                    target="_blank">
+                    <button><img style="margin: auto auto;" height="30px" src="images/whatsapp-logo.png"
+                            alt="">Whatsapp</button>
+                </a><br> <span style="font-size: 15px; color: rgb(240, 0, 0);">For Any Deal, Contact Us<br> through
+                    Whatsapp
+                    By Clicking this Button</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
